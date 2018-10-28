@@ -26,13 +26,17 @@ const receiveDescriptions = descriptions => ({
 });
 
 export const fetchItems = () => dispatch => {
-  return apiFetchItems().then( response => (
-    dispatch(receiveItems(response.payload))
-  ));
+  return apiFetchItems().then( response => {
+    console.log('apifetchitems res', response);
+    console.log('apifetchitems res.pay', response.payload);
+    return dispatch(receiveItems(response.payload));
+  });
 };
 
 export const fetchDescriptions = () => dispatch => {
-  return apiFetchDescriptions().then( response => (
-    dispatch(receiveDescriptions(response.payload))
-  ));
+  return apiFetchDescriptions().then( response => {
+    console.log('apiFetchDescriptions res', response);
+    console.log('apiFetchDescriptions res.pay', response.payload);
+    return dispatch(receiveDescriptions(response.payload));
+  });
 };
