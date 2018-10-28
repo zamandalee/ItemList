@@ -11,3 +11,16 @@ export const fetchDescriptions = () => {
 };
 
 // ACTIONS:
+
+export const RECEIVE_ITEMS = 'RECEIVE_ITEMS';
+export const RECEIVE_DESCRIPTIONS = 'RECEIVE_DESCRIPTIONS';
+
+const receiveItems = payload => ({
+  type: RECEIVE_ITEMS,
+  payload
+});
+
+const receiveDescriptions = payload => ({
+  type: RECEIVE_DESCRIPTIONS,
+  payload
+});
