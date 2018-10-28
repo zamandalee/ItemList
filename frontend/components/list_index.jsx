@@ -64,7 +64,7 @@ class ListIndex extends React.Component {
           {items}
         </ul>
 
-        <h2>Item Details</h2>
+        <h2>Details</h2>
         <ul className="descriptions-ul">
           {descriptions}
         </ul>
