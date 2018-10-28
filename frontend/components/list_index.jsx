@@ -9,6 +9,7 @@ import ItemDescription from './item_description';
 class ListIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // fetch items and item descriptions from provided AWS JSON urls
@@ -18,14 +19,25 @@ class ListIndex extends React.Component {
     // fetchDescriptions();
   }
 
+  handleClick(e) {
+    // iterate through all list items and set their class to only "item-li"
+    const allItems = document.getElementsByClassName('item-li');
+    for (let i = 0; i < allItems.length; i++) {
+      allItems[i].className = "item-li";
+    }
+
+    // add "clicked" to the classlist of the clicked item to change its color
+    e.target.className = "item-li clicked";
+  }
+
   render() {
     const loader = <img className="loader" src="./assets/loaderw.gif" />;
 
     /*
       BELOW COMMENTED OUT CODE IS FOR REQUESTS TO AWS S3 SERVER FOR DATA
       Code is commented out because of a no access from null origin error
-      that occurs when I try to send a request, which has to do with axios's
-      way of making http requests.
+      that occurs when I try to send a request, which I'm guessing has to do
+      with axios's way of making http requests from a null origin.
 
       // while item data hasnt been fetched yet, display a loader gif
       if (this.props.items === undefined || this.props.descriptions === undefined ) {
@@ -43,12 +55,14 @@ class ListIndex extends React.Component {
       });
     */
 
-    console.log(itemPayload.default.payload);
-    console.log(descriptionPayload.default.payload);
-
     // here I'm accessing a local version of the data instead
+    // <ListItem item={item} key={idx}/>
     let items = itemPayload.default.payload.map( (item, idx) => {
-      return (<ListItem item={item} key={idx}/>);
+      return (
+        <li className="item-li" onClick={ this.handleClick } key={idx}>
+          {this.props.item}
+        </li>
+      );
     });
 
     let descriptions = descriptionPayload.default.payload.map( descrip => {
