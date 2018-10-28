@@ -34,3 +34,32 @@ h1 {
 h2 {
   font-size: 3vh;
 }
+
+.items-ul, .descriptions-ul {
+  display: flex;
+  overflow: scroll;
+
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  margin-left: 1vw;
+  padding: 4vw 0;
+
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+}
+
+.item-li {
+  cursor: pointer;
+  margin: 0 2vw;
+  padding: 5vw 4vw;
+  background: #e7e7e7;
+  border-radius: 4px;
+}
+
+.clicked {
+  background: #d3e4ed;
+}
+
+.descriptions-ul {
+  flex-direction: column;
+}
