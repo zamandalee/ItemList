@@ -1,6 +1,10 @@
 import React from 'react';
+
 import * as itemPayload from '../../assets/items_list.json';
 import * as descriptionPayload from '../../assets/items_description.json';
+
+import ListItem from './list_item';
+import ItemDescription from './item_description';
 
 class ListIndex extends React.Component {
   constructor(props) {
@@ -39,15 +43,33 @@ class ListIndex extends React.Component {
       });
     */
 
+    console.log(itemPayload.default.payload);
+    console.log(descriptionPayload.default.payload);
+
     // here I'm accessing a local version of the data instead
-    let items = itemPayload.default.payload.map( item => {
-      return (<ListItem item={item} />);
+    let items = itemPayload.default.payload.map( (item, idx) => {
+      return (<ListItem item={item} key={idx}/>);
     });
 
-    let descriptions = descriptionPayload.default.payload.map( description => {
-      return (<ItemDescription description={description} />);
+    let descriptions = descriptionPayload.default.payload.map( descrip => {
+      return (<ItemDescription description={descrip} key={descrip.key} />);
     });
 
+    return (
+      <div className="list-index">
+        <h1>Item List</h1>
+
+        <h2>Items</h2>
+        <ul className="items-ul">
+          {items}
+        </ul>
+
+        <h2>Item Details</h2>
+        <ul className="descriptions-ul">
+          {descriptions}
+        </ul>
+      </div>
+    );
   }
 }
 
