@@ -1,0 +1,162 @@
+{
+  "status": 200,
+  "message": "ITEMS DESCRIPTION EXIST",
+  "payload": [
+    {
+      "key": "item1",
+      "timelabel": "201712151200",
+      "startTime": 1516017600000,
+      "endTime": 1516017600000,
+      "destination": "s3",
+      "runInstanceLabel": "datasource",
+      "status": "stared",
+      "dataStats": {
+        "dataSize": 3,
+        "numRows": 5370
+      }
+    },
+    {
+      "key": "item2",
+      "timelabel": "201712151200",
+      "startTime": 1516017600000,
+      "endTime": 1516017660000,
+      "destination": "redshift",
+      "runInstanceLabel": "datasource",
+      "status": "failed",
+      "dataStats": {
+        "dataSize": 6,
+        "numRows": 5663
+      }
+    },
+    {
+      "key": "item3",
+      "timelabel": "201712151200",
+      "startTime": 1516017600000,
+      "endTime": 1516017720000,
+      "destination": "glue",
+      "runInstanceLabel": "datasource",
+      "status": "timeout",
+      "dataStats": {
+        "dataSize": 7,
+        "numRows": 14813
+      }
+    },
+    {
+      "key": "item4",
+      "timelabel": "201712141200",
+      "startTime": 1515931200000,
+      "endTime": 1515931200000,
+      "destination": "s3",
+      "runInstanceLabel": "datasource",
+      "status": "stared",
+      "dataStats": {
+        "dataSize": 2,
+        "numRows": 11226
+      }
+    },
+    {
+      "key": "item5",
+      "timelabel": "201712141200",
+      "startTime": 1515931200000,
+      "endTime": 1515931260000,
+      "destination": "redshift",
+      "runInstanceLabel": "datasource",
+      "status": "failed",
+      "dataStats": {
+        "dataSize": 10,
+        "numRows": 4262
+      }
+    },
+    {
+      "key": "item6",
+      "timelabel": "201712141200",
+      "startTime": 1515931200000,
+      "endTime": 1515931320000,
+      "destination": "glue",
+      "runInstanceLabel": "datasource",
+      "status": "stared",
+      "dataStats": {
+        "dataSize": 8,
+        "numRows": 4725
+      }
+    },
+    {
+      "key": "item7",
+      "timelabel": "201712131200",
+      "startTime": 1515844800000,
+      "endTime": 1515844800000,
+      "destination": "s3",
+      "runInstanceLabel": "datasource",
+      "status": "failed",
+      "dataStats": {
+        "dataSize": 5,
+        "numRows": 7442
+      }
+    },
+    {
+      "key": "item8",
+      "timelabel": "201712131200",
+      "startTime": 1515844800000,
+      "endTime": 1515844860000,
+      "destination": "redshift",
+      "runInstanceLabel": "datasource",
+      "status": "stared",
+      "dataStats": {
+        "dataSize": 9,
+        "numRows": 17256
+      }
+    },
+    {
+      "key": "item9",
+      "timelabel": "201712131200",
+      "startTime": 1515844800000,
+      "endTime": 1515844920000,
+      "destination": "glue",
+      "runInstanceLabel": "datasource",
+      "status": "timeout",
+      "dataStats": {
+        "dataSize": 5,
+        "numRows": 15062
+      }
+    },
+      {
+      "key": "item10",
+      "timelabel": "201712121200",
+      "startTime": 1515758400000,
+      "endTime": 1515758400000,
+      "destination": "s3",
+      "runInstanceLabel": "datasource",
+      "status": "stared",
+      "dataStats": {
+        "dataSize": 2,
+        "numRows": 20561
+      }
+    },
+    {
+      "key": "item11",
+      "timelabel": "201712121200",
+      "startTime": 1515758400000,
+      "endTime": 1515758460000,
+      "destination": "redshift",
+      "runInstanceLabel": "datasource",
+      "status": "failed",
+      "dataStats": {
+        "dataSize": 3,
+        "numRows": 4728
+      }
+    },
+    {
+      "key": "item12",
+      "timelabel": "201712121200",
+      "startTime": 1515758400000,
+      "endTime": 1515758520000,
+      "destination": "glue",
+      "runInstanceLabel": "datasource",
+      "status": "stared",
+      "dataStats": {
+        "dataSize": 1,
+        "numRows": 24842
+      }
+    }
+  ]
+}
