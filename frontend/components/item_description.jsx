@@ -5,6 +5,7 @@ class ItemDescription extends React.Component {
     super(props);
   }
 
+  // format the timestamp to be more readable
   formatTime(str) {
     const yr = str.slice(0, 4);
     const month = str.slice(4, 6);

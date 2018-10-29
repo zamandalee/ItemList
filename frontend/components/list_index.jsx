@@ -9,7 +9,6 @@ import ItemDescription from './item_description';
 class ListIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   // fetch items and item descriptions from provided AWS JSON urls
@@ -19,29 +18,7 @@ class ListIndex extends React.Component {
     // fetchDescriptions();
   }
 
-  handleClick(e) {
-    // iterate through all items and descriptions and set their class to only "item-li"
-    const allItems = document.getElementsByClassName('item-li');
-    for (let i = 0; i < allItems.length; i++) {
-      allItems[i].className = "item-li";
-    }
-
-    const allDetails = document.getElementsByClassName("description-li");
-    for (let i = 0; i < allDetails.length; i++) {
-      allDetails[i].className = "description-li";
-    }
-
-    // add "clicked" to the classlist of the clicked item to change its color
-    e.target.className = "item-li clicked";
-    const clickedDetail = document.getElementById(e.target.textContent);
-    clickedDetail.className = "description-li clicked";
-
-    // scroll to corresponding detail box
-    clickedDetail.scrollIntoView();
-  }
-
   render() {
-    const loader = <img className="loader" src="./assets/loaderw.gif" />;
 
     /*
       BELOW COMMENTED OUT CODE IS FOR REQUESTS TO AWS S3 SERVER FOR DATA
@@ -50,6 +27,8 @@ class ListIndex extends React.Component {
       with axios's way of making http requests from a null origin.
 
       // while item data hasnt been fetched yet, display a loader gif
+      const loader = <img className="loader" src="./assets/loaderw.gif" />;
+
       if (this.props.items === undefined || this.props.descriptions === undefined ) {
         return (loader);
       }
@@ -66,16 +45,14 @@ class ListIndex extends React.Component {
     */
 
     // here I'm accessing a local version of the data instead
-    // and creating li elements for each individual list item
+    // and using a different component to create each list item as an li element
     let items = itemPayload.default.payload.map( (item, idx) => {
       return (
-        <li className="item-li" onClick={ this.handleClick } key={idx}>
-          {item}
-        </li>
+        <ListItem item={item} key={idx} />
       );
     });
 
-    // creating li elements for each description in a different component
+    // using a different component to create each description as an li element
     let descriptions = descriptionPayload.default.payload.map( descrip => {
       return (<ItemDescription description={descrip} key={descrip.key} />);
     });

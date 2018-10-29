@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// API UTILS:
+// API UTILS (to fetch the list data from S3)
 
 export const apiFetchItems = () => {
   return axios.get('https://s3-us-west-2.amazonaws.com/frontend.codex/challenge2/items_list.json');
@@ -27,16 +27,12 @@ const receiveDescriptions = descriptions => ({
 
 export const fetchItems = () => dispatch => {
   return apiFetchItems().then( response => {
-    console.log('apifetchitems res', response);
-    console.log('apifetchitems res.pay', response.payload);
     return dispatch(receiveItems(response.payload));
   });
 };
 
 export const fetchDescriptions = () => dispatch => {
   return apiFetchDescriptions().then( response => {
-    console.log('apiFetchDescriptions res', response);
-    console.log('apiFetchDescriptions res.pay', response.payload);
     return dispatch(receiveDescriptions(response.payload));
   });
 };
