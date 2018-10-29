@@ -114,6 +114,18 @@ h2 {
   border-right: 1px solid #777777;
 }
 
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.status-circle {
+  height: 1.2vh;
+  width: 1.2vh;
+  border-radius: 50%;
+  margin-left: 1vh;
+}
+
 .bottom-details {
   font-size: 1.8vh;
 }

@@ -26,7 +26,11 @@ class ItemDescription extends React.Component {
           <div className="key-time">
             <div className="key">{key}</div> {timelabel}
           </div>
-          {status}
+
+          <div className="status">
+            {status}
+            <div className='status-circle ${}'></div>
+          </div>
         </div>
         <div className="bottom-details">
           {destination}, size {dataStats.dataSize}, {dataStats.numRows} rows
