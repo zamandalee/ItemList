@@ -20,14 +20,24 @@ class ListIndex extends React.Component {
   }
 
   handleClick(e) {
-    // iterate through all list items and set their class to only "item-li"
+    // iterate through all items and descriptions and set their class to only "item-li"
     const allItems = document.getElementsByClassName('item-li');
     for (let i = 0; i < allItems.length; i++) {
       allItems[i].className = "item-li";
     }
 
+    const allDetails = document.getElementsByClassName("description-li");
+    for (let i = 0; i < allDetails.length; i++) {
+      allDetails[i].className = "description-li";
+    }
+
     // add "clicked" to the classlist of the clicked item to change its color
     e.target.className = "item-li clicked";
+    const clickedDetail = document.getElementById(e.target.textContent);
+    clickedDetail.className = "description-li clicked";
+
+    // scroll to corresponding detail box
+    clickedDetail.scrollIntoView();
   }
 
   render() {
@@ -56,7 +66,7 @@ class ListIndex extends React.Component {
     */
 
     // here I'm accessing a local version of the data instead
-    // <ListItem item={item} key={idx}/>
+    // and creating li elements for each individual list item
     let items = itemPayload.default.payload.map( (item, idx) => {
       return (
         <li className="item-li" onClick={ this.handleClick } key={idx}>
@@ -65,6 +75,7 @@ class ListIndex extends React.Component {
       );
     });
 
+    // creating li elements for each description in a different component
     let descriptions = descriptionPayload.default.payload.map( descrip => {
       return (<ItemDescription description={descrip} key={descrip.key} />);
     });
@@ -87,6 +98,7 @@ class ListIndex extends React.Component {
   }
 }
 
+// List Index Container, if the axios requests had worked
 import { connect } from 'react-redux';
 import { fetchItems, fetchDescriptions } from '../actions/list_actions';
 

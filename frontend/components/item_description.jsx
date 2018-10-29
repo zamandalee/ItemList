@@ -20,14 +20,14 @@ class ItemDescription extends React.Component {
     timelabel = this.formatTime(timelabel);
 
     return (
-      <li className="description-li">
+      <li className="description-li" id={key}>
         <div className="top-details">
           <div className="key-time">
             <div className="key">{key}</div> {timelabel}
           </div>
           {status}
         </div>
-        <div class="bottom-details">
+        <div className="bottom-details">
           {destination}, size {dataStats.dataSize}, {dataStats.numRows} rows
         </div>
       </li>
