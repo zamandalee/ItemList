@@ -22,10 +22,12 @@ class ItemDescription extends React.Component {
     return (
       <li className="description-li">
         <div className="top-details">
-          <div>{key} | {timelabel}</div>
-          <div>{status}</div>
+          <div className="key-time">
+            <div className="key">{key}</div> {timelabel}
+          </div>
+          {status}
         </div>
-        <div>
+        <div class="bottom-details">
           {destination}, size {dataStats.dataSize}, {dataStats.numRows} rows
         </div>
       </li>
