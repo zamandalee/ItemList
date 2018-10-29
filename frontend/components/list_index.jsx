@@ -60,7 +60,7 @@ class ListIndex extends React.Component {
     let items = itemPayload.default.payload.map( (item, idx) => {
       return (
         <li className="item-li" onClick={ this.handleClick } key={idx}>
-          {this.props.item}
+          {item}
         </li>
       );
     });
