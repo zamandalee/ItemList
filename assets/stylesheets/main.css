@@ -126,6 +126,14 @@ h2 {
   margin-left: 1vh;
 }
 
+.yellow {
+  background: #ffe10c;
+}
+
+.red {
+  background: #e02c2c;
+}
+
 .bottom-details {
   font-size: 1.8vh;
 }
