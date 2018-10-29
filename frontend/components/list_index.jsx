@@ -60,6 +60,7 @@ class ListIndex extends React.Component {
     return (
       <div className="list-index">
         <h1>Item List</h1>
+        <h4>by <a href="https://zalee.me">Amanda Lee</a></h4>
 
         <h2>Items</h2>
         <ul className="items-ul">

@@ -17,19 +17,29 @@ html, body {
   scroll-behavior: smooth;
 }
 
+a {
+  color: #2d6987;
+}
+
 /* GENERAL LIST INDEX */
 
 .list-index {
-  padding: 5vh 7vw;
+  padding: 4vh 7vw;
 }
 
 h1 {
-  padding-bottom: 3vh;
+  padding-bottom: 1vh;
   text-align: center;
   letter-spacing: 1vw;
   font-size: 5vh;
   font-weight: 400;
   color: #2d6987;
+}
+
+h4 {
+  padding-bottom: 3vh;
+  text-align: center;
+  font-size: 2vh;
 }
 
 h2 {
@@ -44,7 +54,7 @@ h2 {
   margin-top: 2vh;
   margin-bottom: 3vh;
   margin-left: 1vw;
-  padding: 4vw 0;
+  padding: 2vw 0;
 
   border: 1px solid #e4e4e4;
   border-radius: 4px;
@@ -56,11 +66,17 @@ h2 {
   font-size: 2vh;
 }
 
+.item-li:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+  background: #dee8ed;
+}
+
 /* ITEM LIST */
 .item-li {
   cursor: pointer;
   margin: 0 2vw;
-  padding: 6vh 3vw;
+  padding: 5vh 2vw;
 }
 
 .clicked {
