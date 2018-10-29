@@ -37,7 +37,8 @@ class ItemDescription extends React.Component {
           </div>
         </div>
         <div className="bottom-details">
-          {destination}, size {dataStats.dataSize}, {dataStats.numRows} rows
+          destination is {destination},
+          data specs: size of {dataStats.dataSize}, {dataStats.numRows} rows
         </div>
       </li>
     );
